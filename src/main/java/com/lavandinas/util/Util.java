@@ -10,7 +10,7 @@ public class Util {
     }
 
     public static void main(String[] args) {
-        String password = "123456";
+        String password = "harry123";
         String encrytedPassword = encrytePassword(password);
 
         System.out.println("Encryted Password: " + encrytedPassword);

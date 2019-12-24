@@ -8,8 +8,9 @@ import com.lavandinas.repositories.CustomerRepository;
 import com.lavandinas.repositories.OrderRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.User;
+//import org.springframework.mail.SimpleMailMessage;
+//import org.springframework.mail.javamail.JavaMailSender;
+//import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -18,7 +19,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
-import java.security.Principal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
@@ -39,6 +39,9 @@ public class HomeController {
     public String home(CustomerOrderDTO customerOrderDTO){
         return "index";
     }
+
+//    @Autowired
+//    private JavaMailSender javaMailSender;
 
     @PostMapping("/agregarsolicitud")
     public String addOrder(@Valid CustomerOrderDTO customerOrderDTO, BindingResult result, Model model) throws ParseException {
@@ -66,6 +69,11 @@ public class HomeController {
             order.setCustomer(customer);
             order = orderRepository.save(order);
         }
+//        SimpleMailMessage message = new SimpleMailMessage();
+//        message.setTo("yasmani537@gmail.com");
+//        message.setSubject("Nueva solicitud de servicio");
+//        message.setText(String.format("Nueva solicitud de servicio: "+"<a href='localhost:8080/administracion//editarsolicitudform/%d'", order.getOrderId()));
+//        javaMailSender.send(message);
         model.addAttribute("order", order);
         return "gracias";
     }

@@ -14,10 +14,10 @@
 
 <div class="container text-center">
     <h5 class="display-3">Gracias por elegirnos</h5>
-    <p class="lead"><strong>Estimado(a) <span th:text="${order.customer.customerName}"></span></strong> su solicitud de servicio ha sido confirmada</p>
+    <p class="lead"><strong>Estimado(a) <span th:text="${order.customer.customerName}"></span></strong> su solicitud de servicio ha sido recibida</p>
     <hr>
-    <p>Fecha: <span th:text="${order.deliveryDate}"></span></p>
-    <p>Hora: <span th:text="${order.deliveryTime}"></span></p>
+    <p>Fecha: <span th:text="${#dates.format(order.deliveryDate, 'dd-MM-yyyy')}"></span></p>
+    <p>Hora: <span th:text="${#dates.format(order.deliveryTime, 'HH:mm')}"></span>
     <p>Teléfono: <span th:text="${order.customer.customerPhone}"></span></p>
     <p>Correo: <span th:text="${order.customer.customerEmail}"></span></p>
     <p>Direccíon: <span th:text="${order.orderAddress}"></span></p>

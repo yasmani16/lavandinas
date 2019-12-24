@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" class="no-js" lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Muchas gracias</title>
+    <!-- CSS Dependencies -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/shards.min.css?v=3.0.0">
+    <link rel="stylesheet" href="../css/shards-extras.css?version=3.0.0">
+</head>
+<body>
+
+<div class="container text-center">
+    <h5 class="display-3">Gracias por elegirnos</h5>
+    <p class="lead"><strong>Estimado(a) <span th:text="${order.customer.customerName}"></span></strong> su solicitud de servicio ha sido confirmada</p>
+    <hr>
+    <p>Fecha: <span th:text="${order.deliveryDate}"></span></p>
+    <p>Hora: <span th:text="${order.deliveryTime}"></span></p>
+    <p>Teléfono: <span th:text="${order.customer.customerPhone}"></span></p>
+    <p>Correo: <span th:text="${order.customer.customerEmail}"></span></p>
+    <p>Direccíon: <span th:text="${order.orderAddress}"></span></p>
+    <p>Mensaje: <span th:text="${order.orderDescription}"></span></p>
+    <p class="lead">
+        <a th:href="@{/}" class="btn btn-primary btn-sm" role="button">Regresa</a>
+    </p>
+</div>
+
+<!-- JavaScript Dependencies -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="../js/shards.min.js"></script>
+</body>
+</html>

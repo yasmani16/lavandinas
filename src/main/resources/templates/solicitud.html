@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" class="no-js" lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Lavandinas</title>
+    <meta name="description" content="Pagina para alquiler de lavadoras a domicilio en medellin.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS Dependencies -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/shards.min.css?v=3.0.0">
+    <link rel="stylesheet" href="../css/shards-extras.css?version=3.0.0">
+
+</head>
+<body class="shards-landing-page--1">
+
+<!-- Contact Section -->
+<div id="contacto" class="contact section py-4">
+    <div class="container py-4">
+        <div class="row justify-content-md-center px-4">
+            <p><font size="5"><b>Solicitar Servicio</b> </font></p>
+        </div>
+    </div>
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-6">
+                <div class="row px-4">
+                    <div class="feature py-4 col-md-6 d-flex">
+                        <div style="background-color: #dc3545bf" class="icon mr-3"><a href="tel:713-992-0916"><i style="color:white" class="fa fa-phone"></i></a></div>
+                        <div>
+                            <h1 style="padding-top:7px"><a href="tel:713-992-0916"><i>0342531820</i></a></h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row px-4">
+                    <div class="feature py-4 col-md-6 d-flex">
+                        <div style="background-color: #17c671" class="icon mr-3"><a href="https://api.whatsapp.com/send?phone=573005599711" target="_blank"><i style="color:white" class="fa fa-whatsapp"></i></a></div>
+                        <div>
+                            <h1 style="padding-top:7px"><a href="https://api.whatsapp.com/send?phone=573005599711" target="_blank"><i>+573005599711</i></a></h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="row justify-content-md-center px-4">
+                    <div class="contact-form col-lg-12 col-md-10 col-lg-7 p-4 mb-4 card">
+                        <form action="#" th:action="@{/solicitudes/agregar}" th:object="${customerOrderDTO}" method="post">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label for="customerName">Nombre</label>
+                                        <input th:field="*{customerName}" type="text" th:classappend="${#fields.hasErrors('customerName')} ? 'form-control is-invalid' : 'form-control is-valid'" id="customerName" placeholder="Nombre">
+                                        <div th:if="${#fields.hasErrors('customerName')}" class="invalid-feedback" th:errors="*{customerName}"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label for="customerPhone">Teléfono</label>
+                                        <input th:field="*{customerPhone}" type="tel" th:classappend="${#fields.hasErrors('customerPhone')} ? 'form-control is-invalid' : 'form-control is-valid'" id="customerPhone" placeholder="Teléfono">
+                                        <div th:if="${#fields.hasErrors('customerPhone')}" class="invalid-feedback" th:errors="*{customerPhone}"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label for="customerEmail">Correo</label>
+                                        <input th:field="*{customerEmail}" type="email" th:classappend="${#fields.hasErrors('customerEmail')} ? 'form-control is-invalid' : 'form-control is-valid'" id="customerEmail" placeholder="Correo">
+                                        <div th:if="${#fields.hasErrors('customerEmail')}" class="invalid-feedback" th:errors="*{customerEmail}"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label for="orderAddress">Direccíon</label>
+                                        <input type="text" th:field="*{orderAddress}" th:classappend="${#fields.hasErrors('orderAddress')} ? 'form-control is-invalid' : 'form-control is-valid'" id="orderAddress" placeholder="Direccíon">
+                                        <div th:if="${#fields.hasErrors('orderAddress')}" class="invalid-feedback" th:errors="*{orderAddress}"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="deliveryDateAsString">Fecha</label>
+                                        <div class="input-group with-addon-icon-left">
+                                            <input th:field="*{deliveryDateAsString}" type="text" th:classappend="${#fields.hasErrors('deliveryDateAsString')} ? 'form-control is-invalid' : 'form-control is-valid'" id="deliveryDateAsString" placeholder="Fecha">
+                                            <span class="input-group-append">
+                                            <span class="input-group-text">
+                                                <i class="fa fa-calendar"></i>
+                                            </span>
+                                            </span>
+                                        </div>
+                                        <div th:if="${#fields.hasErrors('deliveryDateAsString')}" class="invalid-feedback" th:errors="*{deliveryDateAsString}"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label for="isOvernight">Durante la noche</label>
+                                        <input th:value="Si" th:field="*{isOvernight}" type="checkbox" id="isOvernight" name="isOvernight">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label for="deliveryTimeAsString">De</label>
+                                        <input th:field="*{deliveryTimeAsString}" type="time" th:classappend="${#fields.hasErrors('deliveryTimeAsString')} ? 'form-control is-invalid' : 'form-control is-valid'" id="deliveryTimeAsString" placeholder="Desde las">
+                                        <div th:if="${#fields.hasErrors('deliveryTimeAsString')}" class="invalid-feedback" th:errors="*{deliveryTimeAsString}"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label for="pickupTimeAsString">A</label>
+                                        <input th:field="*{pickupTimeAsString}" type="time" class="form-control" id="pickupTimeAsString" placeholder="Hasta las">
+                                        <div th:if="${#fields.hasErrors('pickupTimeAsString')}" class="invalid-feedback" th:errors="*{pickupTimeAsString}"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div>
+                                            <span>Tamaño</span>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input checked="checked" th:value="23L" th:field="*{size}" type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+                                            <label class="custom-control-label" for="customRadioInline1">23 libras</label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input th:value="18L" th:field="*{size}" type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                                            <label class="custom-control-label" for="customRadioInline2">18 libras</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="orderDescription">Mensaje</label>
+                                        <textarea th:field="*{orderDescription}" id="orderDescription" th:classappend="${#fields.hasErrors('orderDescription')} ? 'form-control is-invalid mb-4' : 'form-control is-valid mb-4'" rows="5" placeholder="Mensaje..." name="description"></textarea>
+                                        <div th:if="${#fields.hasErrors('orderDescription')}" class="invalid-feedback" th:errors="*{orderDescription}"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <input class="btn btn-primary btn-pill d-flex ml-auto mr-auto" type="submit" value="Solicitar servicio">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- / Contact Section -->
+
+<!-- Footer Section -->
+<footer>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Servicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contáctenos</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+</footer>
+<!-- / Footer Section -->
+
+<!-- JavaScript Dependencies -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="../js/shards.min.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+    $.fn.datepicker.dates['es'] = {
+		days: ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"],
+		daysShort: ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"],
+		daysMin: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"],
+		months: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+		monthsShort: ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"],
+		today: "Hoy",
+		monthsTitle: "Meses",
+		clear: "Borrar",
+		weekStart: 1,
+		format: "dd/mm/yyyy"
+	};
+
+    $('#deliveryDateAsString').datepicker({
+        language: 'es'
+    });
+
+    $('#isOvernight').change(function(){
+        if($('#isOvernight:checked').length > 0){
+            $("#pickupTimeAsString").prop('disabled', true);
+        }
+        else{
+            $("#pickupTimeAsString").prop('disabled', false);
+        }
+    });
+
+
+});
+</script>
+
+<!-- /GetButton.io widget -->
+</body>
+</html>

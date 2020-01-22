@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" class="no-js" lang="es">
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155014768-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-155014768-1');
+    </script>
+
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Lavandinas</title>
-    <meta name="description" content="Pagina para alquiler de lavadoras a domicilio en medellin.">
+    <title>Lavandinas: Servicio de alquiler, mantenimiento y reparación de lavadoras</title>
+    <meta name="description" content="Prestamos el servicio de alquiler, mantenimiento y reparación de lavadoras">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
     <!-- CSS Dependencies -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -163,51 +174,11 @@
     </div>
 </div>
 <!-- Testimonials Section -->
-<!--<div id="equipo" class="testimonials section py-4">-->
-<!--    <h3 class="section-title text-center m-5">Nuestro Equipo</h3>-->
-<!--    <div class="container py-5">-->
-<!--        <div class="row">-->
-<!--            <div class="col-md-4 testimonial text-center">-->
-<!--                <div class="avatar rounded-circle with-shadows mb-3 ml-auto mr-auto">-->
-<!--                    <img src="../images/common/avatar-1.jpeg" class="w-100" alt="Testimonial Avatar" />-->
-<!--                </div>-->
-<!--                <h5 class="mb-1">Harry</h5>-->
-<!--                <span class="text-muted d-block mb-2">Administrador</span>-->
-<!--                <p>Algo aqui.</p>-->
-<!--            </div>-->
 
-<!--            <div class="col-md-4 testimonial text-center">-->
-<!--                <div class="avatar rounded-circle with-shadows mb-3 ml-auto mr-auto">-->
-<!--                    <img src="../images/common/avatar-2.jpeg" class="w-100" alt="Testimonial Avatar" />-->
-<!--                </div>-->
-<!--                <h5 class="mb-1">Julian</h5>-->
-<!--                <span class="text-muted d-block mb-2">Técnico</span>-->
-<!--                <p>Escribir algo.</p>-->
-<!--            </div>-->
-
-<!--            <div class="col-md-4 testimonial text-center">-->
-<!--                <div class="avatar rounded-circle with-shadows mb-3 ml-auto mr-auto">-->
-<!--                    <img src="../images/common/avatar-3.jpeg" class="w-100" alt="Testimonial Avatar" />-->
-<!--                </div>-->
-<!--                <h5 class="mb-1">Fulano</h5>-->
-<!--                <span class="text-muted d-block mb-2">Técnico</span>-->
-<!--                <p>Escribir algo aqui.</p>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-<!-- / Testimonials Section -->
-
-<!-- Contact Section -->
-<div id="contacto" class="contact section py-4">
-    <div class="container py-4">
-        <div class="row justify-content-md-center px-4">
-            <p><font size="5"><b>Solicitar Servicio</b> </font></p>
-        </div>
-    </div>
-    <div class="container py-4">
+<div id="contacto"class="testimonials section-invert py-4">
+    <h3 class="section-title text-center m-5">Solicitar servicio</h3>
+    <div class="container py-5">
         <div class="row">
-        <div class="col-6">
             <div class="row px-4">
                 <div class="feature py-4 col-md-6 d-flex">
                     <div style="background-color: #dc3545bf" class="icon mr-3"><a href="tel:713-992-0916"><i style="color:white" class="fa fa-phone"></i></a></div>
@@ -224,8 +195,13 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-6">
+    </div>
+</div>
+
+<!-- Contact Section -->
+<div class="contact section-invert py-4">
+    <h5 class="section-title text-center m-5">En línea</h5>
+    <div class="container py-4">
             <div class="row justify-content-md-center px-4">
                 <div class="contact-form col-lg-12 col-md-10 col-lg-7 p-4 mb-4 card">
                     <form action="#" th:action="@{/agregarsolicitud}" th:object="${customerOrderDTO}" method="post">
@@ -323,8 +299,6 @@
                     </form>
                 </div>
             </div>
-        </div>
-    </div>
     </div>
 </div>
 <!-- / Contact Section -->

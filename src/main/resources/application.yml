@@ -8,9 +8,19 @@ spring:
     hibernate:
       ddl-auto: none
   datasource:
-    url: jdbc:mysql://localhost:3306/lavandinas
+    url: jdbc:mysql://lavandinas.crycevifxxlg.us-east-1.rds.amazonaws.com:3306/lavandinas
     username: lavandinas
     password: lavandinas2020
+server:
+  port: 5000
+#  ssl:
+#    key-store-type: PKCS12
+#    key-store: classpath:keystore/lavandinas.p12
+#    key-store-password: yasmani
+#    key-alias: lavandinas
+#security:
+#  require-ssl: true
+
 #  mail:
 #    host: smtp.gmail.com
 #    port: 587
